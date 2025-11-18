@@ -71,17 +71,16 @@ func StartNode(configFile string) {
 						apiPort := ports[1]
 						isOk := net.TestConnectivity("http://127.0.0.1:"+apiPort, time.Second*2)
 						if isOk {
-							log.Info("Shut down the previous nxnclient")
+							log.Info("Shut down the previous node")
 							_, err := net.HttpGet("http://127.0.0.1:"+apiPort+"/client/soft/exit", time.Second*3)
 							if err == nil {
-								log.Info("Waiting 5 second for nxnclient shutdown ")
+								log.Info("Waiting 5 second for node shutdown ")
 								<-time.After(time.Second * 5)
 							}
 						}
 					}
 				}
 			}
-
 		}
 	}
 
