@@ -1,0 +1,10 @@
+time="2025-11-13T08:16:44+08:00" level=info msg="load config file from E:\\gopath\\src\\github.com\\agent-network-protocol\\registry\\cmd\\registry\\config.toml" method=core.loadconfig module=a-core
+time="2025-11-13T08:16:45+08:00" level=info msg="数据库加载完成" method=agent.init module=a-dbu
+time="2025-11-13T08:16:45+08:00" level=info msg=Starting module=a-rct service="[Remote Api]" total=1
+time="2025-11-13T08:16:45+08:00" level=info msg="Main program startup completed." method=commands.startnode module=a-m
+time="2025-11-13T08:16:45+08:00" level=info msg=run method=api.start module=a-api
+time="2025-11-13T08:16:45+08:00" level=info msg="Api Server Start Success" method=api.start module=a-api
+time="2025-11-13T16:26:10+08:00" level=info msg="Exit signal received:terminated" method=commands.startnode module=a-m
+time="2025-11-13T16:26:10+08:00" level=info msg="Exit notification!!!"
+time="2025-11-13T16:26:10+08:00" level=error msg=Exited module=a-rct service="[Remote Api]" surplus=0
+time="2025-11-13T16:26:11+08:00" level=info msg="The main program has exited." method=commands.startnode module=a-m

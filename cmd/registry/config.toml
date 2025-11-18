@@ -1,0 +1,11 @@
+[base]
+local_server_url = "http://192.168.3.35:52320"
+
+
+[mysql]
+host = "localhost"
+port = "53306"
+user = "agent"
+password = "VMDCVyDFJ3bsx7gjGboZk739tEH1lr"
+database = "agent"
+charset = "utf8"
