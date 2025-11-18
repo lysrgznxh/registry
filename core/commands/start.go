@@ -58,31 +58,7 @@ func StartNode(configFile string) {
 
 	// 清空新建panic文件
 	runCtrl.WritePanicFile(nil)
-	{
-		//检查客户端是否在，运行，如果在运行则调用软退出，然后等待15秒
-		{
-			portFile := path.Join(runCtrl.RuntimePath, "api-listen.port")
-			if files.PathExists(portFile) {
-				//读取api服务的端口号
-				portFileContent, err := files.ReadAll(portFile)
-				if err == nil {
-					ports := strings.Split(string(portFileContent), ",")
-					if len(ports) == 2 {
-						apiPort := ports[1]
-						isOk := net.TestConnectivity("http://127.0.0.1:"+apiPort, time.Second*2)
-						if isOk {
-							log.Info("Shut down the previous node")
-							_, err := net.HttpGet("http://127.0.0.1:"+apiPort+"/client/soft/exit", time.Second*3)
-							if err == nil {
-								log.Info("Waiting 5 second for node shutdown ")
-								<-time.After(time.Second * 5)
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+	
 
 	//加载配置文件
 	err := core.LoadConfig(configFile)
